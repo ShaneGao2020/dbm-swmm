@@ -278,7 +278,7 @@ def BGKIsothemalCollision(
     return feq + (1 - dtOvertauPlusdt) * (f - feq)
 
 
-@jit#平衡态分布函数PDF 四次精度
+@jit
 def BGKEquilibriumSWE4th(h: Array, u: Array, XI: Array, W: Array) -> Array:
     cu: Array = jnp.dot(u, XI)
     usqr: Array = jnp.sum(jnp.square(u), axis=-1, keepdims=True)
