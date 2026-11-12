@@ -202,29 +202,6 @@ def generate_house_S12():
 
     return result
 
-def get_zb(size):
-    import rasterio
-    if size==251201:
-        file='./gis_data/dem.tif'
-    elif size==5141:
-        file='./gis_data/dem_51×41.tif'
-    elif size==126101:
-        file='./gis_data/dem_126_101.tif'
-    elif size==10181:
-        file='./gis_data/dem_101_81.tif'
-    elif size==1001801:
-        file='./gis_data/dem_1001_801.tif'
-    elif size==501401:
-        file='./gis_data/dem_501_401.tif'
-    with rasterio.open(file,'r') as img:
-        # 获取数组
-        array = img.read()
-
-    first_band = array[0]
-    # first_band=first_band.transpose()
-    # first_band=first_band[::-1,:]
-    return first_band
-
 def get_zb_by_file(file):
     import rasterio
 
